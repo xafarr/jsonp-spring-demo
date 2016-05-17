@@ -89,7 +89,7 @@ hs_err_pid*
 .idea/sqlDataSources.xml
 .idea/dynamic.xml
 .idea/uiDesigner.xml
-
+*.iml
 # Gradle:
 .idea/gradle.xml
 .idea/libraries
@@ -118,3 +118,7 @@ crashlytics-build.properties
 fabric.properties
 
 # Created by .ignore support plugin (hsz.mobi)
+/target/
+.idea/
+.mvn/
+mvnw*
