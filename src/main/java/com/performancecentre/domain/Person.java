@@ -1,5 +1,8 @@
 package com.performancecentre.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 /**
@@ -10,9 +13,15 @@ import javax.persistence.*;
 public class Person {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "id")
+    @JsonIgnore
     private Long id;
-    @Column(name = "name", nullable = false)
-    private String name;
+    @Column(name = "eid", nullable = false)
+    @JsonIgnore
+    private String eid;
+    @Column(name = "person_name", nullable = false)
+    @JsonProperty(value = "SMARTRegisteredName")
+    private String personName;
 
     public Person() {
     }
@@ -25,11 +34,20 @@ public class Person {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getEid() {
+        return eid;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setEid(String eid) {
+        this.eid = eid;
     }
+
+    public String getPersonName() {
+        return personName;
+    }
+
+    public void setPersonName(String personName) {
+        this.personName = personName;
+    }
+
 }

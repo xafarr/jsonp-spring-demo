@@ -1,5 +1,6 @@
 package com.performancecentre.service;
 
+import com.performancecentre.domain.Person;
 import com.performancecentre.model.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,5 +16,10 @@ public class PersonService {
     @Autowired
     public PersonService(final PersonRepository personRepository) {
         this.personRepository = personRepository;
+    }
+
+    public Person findPersonByEid(String eid) {
+        Person person = personRepository.findPersonByEid(eid);
+        return person;
     }
 }
